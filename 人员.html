@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>人员</title>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+content="width=device-width,initial-scale=1"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" type="text/css" href="css/normalize"/>
+<link rel="stylesheet" type="css/style.css" >
+
+    <style>
+      /*这个是菜单的css*/
+			nav{
+    			position: fixed;
+    			display: flex;
+				justify-content: space-around;
+    			align-items: center;
+    			width: 100%;
+    			height: 100px;
+    			top: 0px;
+    			background-color: rgb(123, 161, 197);
+    			overflow: hidden;
+    			font-size: 40px;
+    			color: rgb(234, 247, 255);
+    			opacity: 0.8;
+    			z-index: 1000;
+			}
+			.homenav{
+				animation: load2 1s linear;
+			}
+
+			nav:hover{
+				opacity: 0.95;
+			}
+			nav .navtitle{
+				padding-left: 50px;
+				width: 30%;
+			}
+			nav .navtitle strong{
+				font-size: 70px;
+				font-weight: bolder;
+			}
+			nav a{
+			display: block;
+			justify-content: center;
+			text-decoration: none;
+			z-index: 1;
+			height: fit-content;
+			line-height: 70px;
+			width: 150px;
+			text-align: center;
+			font-weight: bolder;
+			color: rgb(84, 109, 158);
+			transition: 0.5s;
+			font-size: 35px;
+			}
+			nav .navanim{
+				position: absolute;
+				height: inherit;
+				z-index: 0;
+				background: rgb(155, 200, 240);
+				border-radius: 5px;
+				left: 0px;
+				transition:  all .5s ease 0s;
+				width: 120px;
+			}
+			nav .home,a:nth-child(2):hover~.navanim{
+			width: 146px;
+			left: 37%;
+			}
+
+			nav .about,a:nth-child(3):hover~.navanim{
+			width: 146px;
+			left: 47%;
+			}
+
+			nav .blog,a:nth-child(4):hover~.navanim{
+			width: 130px;
+			left: 58%;
+			}
+
+			nav .album,a:nth-child(5):hover~.navanim{
+			width: 130px;
+			left: 68%;
+			}
+
+			nav .none{
+				width: 20%;
+			}
+
+			@keyframes load2{
+				0%{
+					top: -80px;
+					opacity: 0;
+				}100%{
+					top: 0px;
+					opacity: 0.8;
+				}
+			}
+/*以上是菜单栏的css*/
+        @import url("https://fonts.googleapis.com/css?family=Concert+One|Pacifico");
+.mobile{
+    position:fixed;
+    text-align:center;
+    max-width: 50px;
+    top: 10px;
+    font-size:  10px;
+    display: block;
+    
+}
+        
+        bokeh {
+  position: fixed;
+  width: 2vmin;
+  height: 2vmin;
+  border-radius: 100%;
+  animation-name: explosion;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  animation-timing-function: cubic-bezier(0.84, 0.02, 1, 1);
+  
+}
+bokeh:nth-child(1) {
+  background-color: #2bd8ff;
+  transform: translate(11.7404476506vw, 3.2982912115vh);
+  animation-duration: 2.451477853s;
+  animation-delay: -3.90906953s;
+}
+bokeh:nth-child(2) {
+  background-color: #feff28;
+  transform: translate(12.3909109vw, 3.93209509vh);
+  animation-duration: 2.60826613s;
+  animation-delay: -2.41776304s;
+}
+bokeh:nth-child(3) {
+  background-color: #feff28;
+  transform: translate(9.47078963vw, 12.87790383vh);
+  animation-duration: 2.39346219s;
+  animation-delay: -4.93742387s;
+}
+bokeh:nth-child(4) {
+  background-color: #ef8d22;
+  transform: translate(8.07624258vw, 2.87586468vh);
+  animation-duration: 4.37457654s;
+  animation-delay: -4.23355749s;
+}
+bokeh:nth-child(5) {
+  background-color: #feff28;
+  transform: translate(7.2097767vw, 7.47224354vh);
+  animation-duration: 2.62471243s;
+  animation-delay: -4.35716852s;
+}
+bokeh:nth-child(6) {
+  background-color: #feff28;
+  transform: translate(7.53482773vw, 4.89345161vh);
+  animation-duration: 5.06308s;
+  animation-delay: -4.48903964s;
+}
+bokeh:nth-child(7) {
+  background-color: #feff28;
+  transform: translate(3.2278061vw, 12.008551vh);
+  animation-duration: 6.10653294s;
+  animation-delay: -4.56194997s;
+}
+bokeh:nth-child(8) {
+  background-color: #fc85e1;
+  transform: translate(11.25478674vw, 11.744817vh);
+  animation-duration: 2.83841355s;
+  animation-delay: -6.05491775s;
+}
+bokeh:nth-child(9) {
+  background-color: #fc85e1;
+  transform: translate(12.77471157vw, 18.65215079vh);
+  animation-duration: 4.31000072s;
+  animation-delay: -0.5594004s;
+}
+bokeh:nth-child(10) {
+  background-color: #ef8d22;
+  transform: translate(13.19155825vw, 12.95920536vh);
+  animation-duration: 2.62442022s;
+  animation-delay: -4.58970553s;
+}
+bokeh:nth-child(11) {
+  background-color: #ef8d22;
+  transform: translate(4.31185657vw, 3.36893331vh);
+  animation-duration: 2.9020870937s;
+  animation-delay: -2.0475365525s;
+}
+bokeh:nth-child(12) {
+  background-color: #fc85e1;
+  transform: translate(12.7124176675vw, 9.3853134156vh);
+  animation-duration: 2.7165067308s;
+  animation-delay: -5.3402677425s;
+}
+bokeh:nth-child(13) {
+  background-color: #fc85e1;
+  transform: translate(22.2835231134vw, 12.247368654vh);
+  animation-duration: 3.1761028617s;
+  animation-delay: -4.3999397039s;
+}
+bokeh:nth-child(14) {
+  background-color: #ef8d22;
+  transform: translate(-2.7721270307vw, 8.9730094645vh);
+  animation-duration: 3.6217481701s;
+  animation-delay: -4.3121585024s;
+}
+bokeh:nth-child(15) {
+  background-color: #df471d;
+  transform: translate(13.1182207545vw, 11.2392421851vh);
+  animation-duration: 3.4960993434s;
+  animation-delay: -3.7739573258s;
+}
+bokeh:nth-child(16) {
+  background-color: #2bd8ff;
+  transform: translate(22.74086676506vw, 3.2982912115vh);
+  animation-duration: 2.45197853s;
+  animation-delay: -3.9090857973s;
+}
+bokeh:nth-child(17) {
+  background-color: #feff28;
+  transform: translate(12.390915559vw, 3.93233440239vh);
+  animation-duration: 2.6082661613s;
+  animation-delay: -2.4177699904s;
+}
+bokeh:nth-child(18) {
+  background-color: #fcfc0d;
+  transform: translate(9.4707896083vw, 3.8779038063vh);
+  animation-duration: 2.3934609219s;
+  animation-delay: -4.9374235187s;
+}
+bokeh:nth-child(19) {
+  background-color: #ef8d22;
+  transform: translate(28.07628758158vw, 0.87577557268vh);
+  animation-duration: 4.3745762554s;
+  animation-delay: -4.23875474629s;
+}
+bokeh:nth-child(20) {
+  background-color: #ebeb0a;
+  transform: translate(-1.209776097vw, 7.4722435411vh);
+  animation-duration: 2.6247180243s;
+  animation-delay: -3.3571633852s;
+}
+bokeh:nth-child(21) {
+  background-color: #feff28;
+  transform: translate(26.534866973vw, 3.8934516001vh);
+  animation-duration: 3.0630743428s;
+  animation-delay: -4.489899704964s;
+}
+bokeh:nth-child(22) {
+  background-color: #feff26;
+  transform: translate(15.2278043561vw, 11.0051vh);
+  animation-duration: 3.1065374294s;
+  animation-delay: -4.5619134997s;
+}
+bokeh:nth-child(23) {
+  background-color: #fc85e1;
+  transform: translate(-3.25478087674vw, 11.74499975817vh);
+  animation-duration: 2.8384921355s;
+  animation-delay: -0.096586543775s;
+}
+bokeh:nth-child(24) {
+  background-color: #fc85e1;
+  transform: translate(28.7747115187vw, 7.6520215079vh);
+  animation-duration: 4.3100039072s;
+  animation-delay: -3.553894004s;
+}
+bokeh:nth-child(25) {
+  background-color: #ef8d22;
+  transform: translate(-13.1915375825vw, 14.9592056036vh);
+  animation-duration: 2.6244512022s;
+  animation-delay: -4.58970889s;
+}
+bokeh:nth-child(26) {
+  background-color: #ef8d22;
+  transform: translate(14.3118502657vw, 11.36895931vh);
+  animation-duration: 2.9020870937s;
+  animation-delay: -9.04753667876s;
+}
+bokeh:nth-child(27) {
+  background-color: #fc85e1;
+  transform: translate(17.7124176675vw, 11.3853134156vh);
+  animation-duration: 2.71650656755s;
+  animation-delay: -1.3402677425s;
+}
+bokeh:nth-child(28) {
+  background-color: #de31bb;
+  transform: translate(41.2835235535vw, 11.24735345254vh);
+  animation-duration: 3.1761028617s;
+  animation-delay: -4.3999397039s;
+}
+bokeh:nth-child(29) {
+  background-color: #ef8d29;
+  transform: translate(21.77212523507vw, 6.97303254645vh);
+  animation-duration: 3.6217497801s;
+  animation-delay: -4.3121585024s;
+}
+bokeh:nth-child(30) {
+  background-color: #3bd8ff;
+  transform: translate(-21.118220342355vw, 11.2398789851vh);
+  animation-duration: 3.496090004s;
+  animation-delay: -3.7739555258s;
+}
+bokeh:nth-child(31) {
+  background-color: #fc85e1;
+  transform: translate(24.5567738711vw, 16.915212362vh);
+  animation-duration: 3.4355180075s;
+  animation-delay: -10.5790819766s;
+}
+bokeh:nth-child(32) {
+  background-color: #feff28;
+  transform: translate(15.9501588313vw, 12.9473646869vh);
+  animation-duration: 4.3830077577s;
+  animation-delay: -4.6564701835s;
+}
+bokeh:nth-child(33) {
+  background-color: #feff28;
+  transform: translate(-19.303759829vw, 9.6733774558vh);
+  animation-duration: 2.6689654722s;
+  animation-delay: -10.9045308203s;
+}
+bokeh:nth-child(34) {
+  background-color: #2bd8ff;
+  transform: translate(19.2836951603vw, 6.5025411567vh);
+  animation-duration: 2.6426834256s;
+  animation-delay: -4.8319924428s;
+}
+bokeh:nth-child(35) {
+  background-color: #ef8d22;
+  transform: translate(-23.6593402454vw, 14.2989731288vh);
+  animation-duration: 2.53627768s;
+  animation-delay: -12.6992049899s;
+}
+bokeh:nth-child(36) {
+  background-color: #ef8d22;
+  transform: translate(11.3578105489vw, 15.1503457961vh);
+  animation-duration: 2.9803742064s;
+  animation-delay: -3.860230436s;
+}
+bokeh:nth-child(37) {
+  background-color: #feff28;
+  transform: translate(-18.2137545181vw, 9.6489820089vh);
+  animation-duration: 2.8525129053s;
+  animation-delay: -12.909336042s;
+}
+bokeh:nth-child(38) {
+  background-color: #feff28;
+  transform: translate(18.4226829219vw, 6.6082231423vh);
+  animation-duration: 4.1724251653s;
+  animation-delay: -12.5373921442s;
+}
+bokeh:nth-child(39) {
+  background-color: #2bd8ff;
+  transform: translate(-14.1325762908vw, 16.5826905712vh);
+  animation-duration: 3.3196820224s;
+  animation-delay: -10.1998524335s;
+}
+bokeh:nth-child(40) {
+  background-color: #ef8d22;
+  transform: translate(38.1082612566vw, 9.6828149038vh);
+  animation-duration: 2.4716860672s;
+  animation-delay: -13.804687821s;
+}
+bokeh:nth-child(41) {
+  background-color: #ef8d22;
+  transform: translate(-28.1246196199vw, 13.2154454066vh);
+  animation-duration: 3.9966714491s;
+  animation-delay: -13.2041854036s;
+}
+bokeh:nth-child(42) {
+  background-color: #2bd8ff;
+  transform: translate(12.4867607956vw, 8.990153671vh);
+  animation-duration: 4.3771268993s;
+  animation-delay: -2.9204017862s;
+}
+bokeh:nth-child(43) {
+  background-color: #feff28;
+  transform: translate(-18.4304689846vw, 11.1509289349vh);
+  animation-duration: 2.4345176476s;
+  animation-delay: -11.7879472609s;
+}
+bokeh:nth-child(44) {
+  background-color: #fc85e1;
+  transform: translate(16.7647889352vw, 15.9607535566vh);
+  animation-duration: 4.3935398987s;
+  animation-delay: -3.4611102331s;
+}
+bokeh:nth-child(45) {
+  background-color: #ef8d22;
+  transform: translate(-31.1024281766vw, 8.6360893002vh);
+  animation-duration: 3.7418427756s;
+  animation-delay: -6.8676250685s;
+}
+bokeh:nth-child(46) {
+  background-color: #2bd8ff;
+  transform: translate(13.2214371062vw, 12.2935105902vh);
+  animation-duration: 3.074683766s;
+  animation-delay: -1.4965853318s;
+}
+bokeh:nth-child(47) {
+  background-color: #feff28;
+  transform: translate(17.1716691607vw, 10.1894365936vh);
+  animation-duration: 4.49628187s;
+  animation-delay: -2.968930085s;
+}
+bokeh:nth-child(48) {
+  background-color: #fc85e1;
+  transform: translate(-17.7485884871vw, 8.5140808668vh);
+  animation-duration: 4.6478212704s;
+  animation-delay: -2.4913789916s;
+}
+bokeh:nth-child(49) {
+  background-color: #bf22ef;
+  transform: translate(16.5706834892vw, 8.9999891094vh);
+  animation-duration: 14.4816990552s;
+  animation-delay: -4.3381289066s;
+}
+bokeh:nth-child(50) {
+  background-color: #ef8d22;
+  transform: translate(-24.4062073866vw, 5.7404657598vh);
+  animation-duration: 13.4662897168s;
+  animation-delay: -3.0623966223s;
+}
+bokeh:nth-child(51) {
+  background-color: #ef8d22;
+  transform: translate(28.7275522899vw, 5.8586420239vh);
+  animation-duration: 4.5492821401s;
+  animation-delay: -3.9375445372s;
+}
+bokeh:nth-child(52) {
+  background-color: #fc85e1;
+  transform: translate(-29.2142162683vw, 7.3579443658vh);
+  animation-duration: 2.8023852526s;
+  animation-delay: -12.8018360542s;
+}
+bokeh:nth-child(53) {
+  background-color: #ef5f22;
+  transform: translate(25.9158153095vw, 9.5851120782vh);
+  animation-duration: 4.8828427898s;
+  animation-delay: -4.0170178676s;
+}
+bokeh:nth-child(54) {
+  background-color: #2274ef;
+  transform: translate(29.5706834892vw, 8.9999891094vh);
+  animation-duration: 4.48160552s;
+  animation-delay: -4.33812066s;
+}
+bokeh:nth-child(55) {
+  background-color: #ef8d22;
+  transform: translate(-14.4062073866vw, 5.7404657598vh);
+  animation-duration: 3.46625168s;
+  animation-delay: -3.0623966223s;
+}
+bokeh:nth-child(56) {
+  background-color: #ef8d22;
+  transform: translate(28.7275522899vw, 15.8586420239vh);
+  animation-duration: 4.552821401s;
+  animation-delay: -3.9375445372s;
+}
+bokeh:nth-child(57) {
+  background-color: #fc85e1;
+  transform: translate(27.2142162683vw, 12.3579443658vh);
+  animation-duration: 3.8023852526s;
+  animation-delay: -2.8018360542s;
+}
+bokeh:nth-child(58) {
+  background-color: #22b5ef;
+  transform: translate(-10.9158153095vw, 8.58511782vh);
+  animation-duration: 3.8828427898s;
+  animation-delay: -4.0170178676s;
+}
+bokeh:nth-child(59) {
+  background-color: #fc85e1;
+  transform: translate(0.7485884871vw, 0.5140808668vh);
+  animation-duration: 4.64712704s;
+  animation-delay: -12.4913789916s;
+}
+bokeh:nth-child(60) {
+  background-color: #ef22a7;
+  transform: translate(0.0000092vw, 0.9999891094vh);
+  animation-duration: 2.4816990552s;
+  animation-delay: -4.3381289066s;
+}
+bokeh:nth-child(61) {
+  background-color: #ef8d22;
+  transform: translate(-27.400000073866vw, 10.74046598vh);
+  animation-duration: 3.46697168s;
+  animation-delay: -4.06266223s;
+}
+bokeh:nth-child(62) {
+  background-color: #22a0ef;
+  transform: translate(20.0005522899vw, 7.8586420239vh);
+  animation-duration: 3.52821401s;
+  animation-delay: -4.9375445372s;
+}
+bokeh:nth-child(63) {
+  background-color: #fc85e1;
+  transform: translate(-20.0000142162683vw, 10.3579443658vh);
+  animation-duration: 2.8023852526s;
+  animation-delay: -2.8018360542s;
+}
+bokeh:nth-child(64) {
+  background-color: #ef2222;
+  transform: translate(40.0058153095vw, 6.5851120782vh);
+  animation-duration: 4.8828427898s;
+  animation-delay: -7.00178676s;
+}
+bokeh:nth-child(65) {
+  background-color: #ef6622;
+  transform: translate(30.00006834892vw, 9.4325891094vh);
+  animation-duration: 1.4816000552s;
+  animation-delay: -4.33812066s;
+}
+bokeh:nth-child(66) {
+  background-color: #ef6a22;
+  transform: translate(0.000002076vw, 6.7867598vh);
+  animation-duration: 3.46625168s;
+  animation-delay: -3.0623966223s;
+}
+bokeh:nth-child(67) {
+  background-color: #ef8d22;
+  transform: translate(-21.00099vw, 15.8586420239vh);
+  animation-duration: 4.552821401s;
+  animation-delay: -7.9375445372s;
+}
+bokeh:nth-child(68) {
+  background-color: #fc85e1;
+  transform: translate(-19.2142162683vw, 12.3579443658vh);
+  animation-duration: 3.8023852526s;
+  animation-delay: -11.8018360542s;
+}
+bokeh:nth-child(69) {
+  background-color: #2282ef;
+  transform: translate(-34.153095vw, 8.58511782vh);
+  animation-duration: 5.8827898s;
+  animation-delay: -14.01708676s;
+}
+bokeh:nth-child(70) {
+  background-color: #2bd8ff;
+  transform: translate(-21.74476506vw, 3.2912115vh);
+  animation-duration: 2.4514853s;
+  animation-delay: -3.9090695973s;
+}
+bokeh:nth-child(71) {
+  background-color: #feff28;
+  transform: translate(-32.390309vw, 31.9320950239vh);
+  animation-duration: 2.6061613s;
+  animation-delay: -2.41772704s;
+}
+bokeh:nth-child(72) {
+  background-color: #feff28;
+  transform: translate(-19.4707896083vw, 12.8779038063vh);
+  animation-duration: 2.3934609219s;
+  animation-delay: -4.9374235187s;
+}
+bokeh:nth-child(73) {
+  background-color: #ef8d22;
+  transform: translate(-38.0428158vw, 2.8758646268vh);
+  animation-duration: 4.3745762554s;
+  animation-delay: -4.2335574629s;
+}
+bokeh:nth-child(74) {
+  background-color: #ff9b28;
+  transform: translate(-27.206097vw, 7.4722435411vh);
+  animation-duration: 2.6247180243s;
+  animation-delay: -1.3571633852s;
+}
+bokeh:nth-child(75) {
+  background-color: #28bfff;
+  transform: translate(-27.5348277973vw, 4.8934516001vh);
+  animation-duration: 5.0634908s;
+  animation-delay: -4.4890304964s;
+}
+bokeh:nth-child(76) {
+  background-color: #feff28;
+  transform: translate(-13.2278043561vw, 2.00857051vh);
+  animation-duration: 6.1065374294s;
+  animation-delay: -4.5619134997s;
+}
+bokeh:nth-child(77) {
+  background-color: #fc85e1;
+  transform: translate(-31.2547804674vw, 11.74495817vh);
+  animation-duration: 2.8384921355s;
+  animation-delay: -4.0965491775s;
+}
+bokeh:nth-child(78) {
+  background-color: #fc8587;
+  transform: translate(-32.7747115187vw, 18.65205079vh);
+  animation-duration: 4.3100039072s;
+  animation-delay: -2.553894004s;
+}
+bokeh:nth-child(79) {
+  background-color: #ef2222;
+  transform: translate(-23.1915375825vw, 22.9592056036vh);
+  animation-duration: 21.6244512022s;
+  animation-delay: -4.5897035553s;
+}
+        .b{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 1000px;
+  z-index: -10;
+  zoom: 1;
+  background-color: rgb(255, 255, 255);
+  background-image: url(125.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-background-size:100%;
+  -o-background-size:100%;
+  background-position: center 0;
+  -webkit-filter: blur(4px);
+  -moz-filter:blur(4px);
+  -o-filter:blur(4px);
+  -ms-filter:blur(4px);
+  filter: blur(4px) alpha(opacity=50);
+  -moz-opacity:0.9;
+  -khtml-opacity:0.9;
+  opacity:0.9;
+  background-attachment: fixed;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            perspective: 1000px;
+        }
+        .card-container{
+            width: 300px;
+            height: 400px;
+            position: relative;
+            perspective: 1000px;
+        }
+        .cover,.back{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            transition: transform .25s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            border-radius: 4rem;
+            box-shadow: 0 .2rem .5rem ragb(0,0,0, .18);
+        }
+        .cover{
+          background-image: radial-gradient( circle 321px at 8.3% 75.7%,  rgba(209,247,241,1) 0%, rgba(249,213,213,1) 81% );
+            transform: rotateY(0deg);
+            font-size: 160px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .back{
+          background-image: linear-gradient( 68.4deg,  rgba(248,182,204,1) 0.5%, rgba(192,198,230,1) 49%, rgba(225,246,240,1) 99.8% );
+            transform: rotateY(-180deg);
+        }
+        .card-container:hover .cover{
+            transform: rotateY(180deg);
+        }
+        .card-container:hover .back{
+            transform: rotateY(0deg);
+        }
+    
+        .pyro>.before,.pyro>.after{
+  position:fixed;
+  max-width: 5%;
+  height:5px;
+  border-radius: 50%;
+  box-shadow:0 0 #fff,0 0 #fff,0 0 #fff,0 0 #fff,0 0 #fff,0 0 #fff,0 0 #fff,0 0 #fff;
+  -moz-animation: 1s bang ease-out infinite backwards,1s gravity ease-in infinite backwards,5s position linear infinite backwards;
+  -webkit-animation:1s bang ease-out infinite backwards,1s gravity ease-in infinite backwards,5s position linear infinite backwards;
+  -o-animation:1s bang ease-out infinite backwards,1s gravity ease-in infinite backwards,5s position linear infinite backwards;
+  -ms-animation:1s bang ease-out infinite backwards,1s gravity ease-in infinite backwards,5s position linear infinite backwards;
+  animation:1s bang ease-out infinite backwards,1s gravity ease-in infinite backwards,5s position linear infinite backwards;
+}
+.pyro>.after{
+  -moz-animation-delay: 1.25s,1.25s,1.25s;
+  -webkit-animation-delay: 1.25s,1.25s,1.25s;
+  -o-animation-delay: 1.25s,1.25s,1.25s;
+  -ms-anomation-delay:1.25s,1.25s,1.25s;
+  animation-delay:1.25s,1.25s,1.25s ;
+  -moz-animation-delay: 1.25s,1.25s,6.25s;
+  -webkit-animation-delay: 1.25s,1.25s,6.25s;
+  -o-animation-delay: 1.25s,1.25s,6.25s;
+  -ms-anomation-delay:1.25s,1.25s,6.25s;
+  animation-delay:1.25s,1.25s,6.25s ;
+}
+       
+        @-webkit-keyframes gravity{
+  to{
+    transform:translateY(20px);
+    -moz-transform:translateY(20px);
+    -webkit-transform: translateY(20px);
+    -o-transform: translateY(20px);
+    -ms-transform:translateY(20px) ;
+    opacity: translateY(20px);
+  }
+}
+@-o-keyframes gravity{
+  to{
+    transform:translateY(15px);
+    -moz-transform:translateY(15px);
+    -webkit-transform: translateY(15px);
+    -o-transform: translateY(15px);
+    -ms-transform:translateY(15px) ;
+    opacity: translateY(15px);
+  }
+}
+@-ms-keyframes gravity{
+  to{
+    transform:translateY(15px);
+    -moz-transform:translateY(15px);
+    -webkit-transform: translateY(15px);
+    -o-transform: translateY(15px);
+    -ms-transform:translateY(20px) ;
+    opacity: translateY(20px);
+  }
+}
+@keyframes gravity{
+  to{
+    transform:translateY(20px);
+    -moz-transform:translateY(20px);
+    -webkit-transform: translateY(20px);
+    -o-transform: translateY(20px);
+    -ms-transform:translateY(20px) ;
+    opacity: translateY(20px);
+  }
+}
+@-webkit-keyframes position{
+  0%,19.9%{
+  margin-top:10%;
+  margin-left:40%;
+}
+20%,19.9%{
+  margin-top:40%;
+  margin-left:30%;
+}
+40%,59.9%{
+  margin-top: 20%;
+  margin-left: 70%;
+}
+60%,79.9%{
+  margin-top:30% ;
+  margin-left:20%;
+}
+80%,99.9%{
+  margin-top:30%;
+  margin-left:80%;
+}
+}
+@-moz-keyframes position{
+  0%,19.9%{
+  margin-top:10%;
+  margin-left:40%;
+}
+20%,19.9%{
+  margin-top:40%;
+  margin-left:30%;
+}
+40%,59.9%{
+  margin-top: 20%;
+  margin-left: 70%;
+}
+60%,79.9%{
+  margin-top:30% ;
+  margin-left:20%;
+}
+80%,99.9%{
+  margin-top:30%;
+  margin-left:80%;
+}
+}
+@-o-keyframes position{
+  0%,19.9%{
+  margin-top:10%;
+  margin-left:40%;
+}
+20%,19.9%{
+  margin-top:40%;
+  margin-left:30%;
+}
+40%,59.9%{
+  margin-top: 20%;
+  margin-left: 70%;
+}
+60%,79.9%{
+  margin-top:30% ;
+  margin-left:20%;
+}
+80%,99.9%{
+  margin-top:30%;
+  margin-left:80%;
+}
+}
+@-ms-keyframes position{
+  0%,19.9%{
+  margin-top:10%;
+  margin-left:40%;
+}
+20%,19.9%{
+  margin-top:40%;
+  margin-left:30%;
+}
+40%,59.9%{
+  margin-top: 20%;
+  margin-left: 70%;
+}
+60%,79.9%{
+  margin-top:30% ;
+  margin-left:20%;
+}
+80%,99.9%{
+  margin-top:30%;
+  margin-left:80%;
+}
+}
+@keyframes position{
+  0%,19.9%{
+  margin-top:10%;
+  margin-left:40%;
+}
+20%,19.9%{
+  margin-top:40%;
+  margin-left:30%;
+}
+40%,59.9%{
+  margin-top: 20%;
+  margin-left: 70%;
+}
+60%,79.9%{
+  margin-top:30% ;
+  margin-left:20%;
+}
+80%,99.9%{
+  margin-top:30%;
+  margin-left:80%;
+}
+}
+@keyframes explosion{
+  0%{
+      opacity: 0;
+  }
+      70%{
+          opacity: 1;
+      }
+  100%{
+      transform:translate(40vw,80vh);
+  }
+}
+b{
+  color: #FFF;
+}
+    
+    </style>
+   
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        <div class="card-container">
+            <div class="cover" >
+                <b>组</b>
+            </div>
+            <div class="back">
+                姓名：张颖和
+                
+                <br/>负责内容：<br/>海底隧道页面<br/>桥梁结构页面<br/>3D模型
+            </div>
+        </div>
+            <div class="card-container">
+                <div class="cover" >
+                    <b>员</b>
+                </div>
+                <div class="back">
+                    姓名：唐梓晋
+                    
+                    <br/>负责内容：<br/>网站首页<br/>人员页面
+                </div>
+            </div>
+                <div class="card-container">
+                    <div class="cover" >
+                        <b>分</b>
+                    </div>
+                    <div class="back">
+                        姓名：罗威众
+                        
+                        <br/>负责内容：<br/>制作小游戏
+                    </div>
+                </div>
+                    <div class="card-container">
+                        <div class="cover" >
+                            <b>工</b>
+                        </div>
+                        <div class="back">
+                            姓名：申子禾
+                            
+                            <br/>负责内容：<br/>影响页面
+                        </div>
+                    </div>  
+                    <div class="b">
+                        <a><img src="125.png" style="width:100% ;height:100%;" alt=""/></a>
+                    </div>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>  
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>
+                    <bokeh></bokeh>  
+                    
+                    <div class="pyro"></div>
+<div class="before"></div>
+<div class="after"></div>
+        
+    </body>
+</html>
